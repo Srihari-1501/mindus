@@ -17,7 +17,17 @@ To get started with Mindus, follow these steps:
 
 1. **Installation:** Clone the repository to your local machine.
 2. **Setup:** Configure the necessary environment variables and dependencies.
-3. **Usage:** Start using Mindus to create your personalized library and take detailed notes on your favorite books.
+3. ```sql
+    CREATE TABLE books (
+    id SERIAL PRIMARY KEY,
+    booktitle TEXT NOT NULL,
+    dateent DATE DEFAULT CURRENT_DATE
+    author TEXT NOT NULL,
+    description TEXT NOT NULL,
+    rating INT,
+    isbn TEXT
+);
+4. **Usage:** Start using Mindus to create your personalized library and take detailed notes on your favorite books.
 
 ## Contributing
 
