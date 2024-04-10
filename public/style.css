@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+body{
+
+    background-color: #B3C8CF;
+    color: #9BA4B5;
+    font-family: "Josefin Sans", sans-serif;
+    
+}
+.bg{
+    
+    background-color: #B3C8CF !important;
+    color: #9BA4B5;
+    font-family: "Josefin Sans", sans-serif;
+    
+}
+
+.hero{
+    background-color: #F1EEDC;
+
+}
+.navbar1{
+    background-color: #F1EEDC !important;
+}
+
+.colorbtn{
+    background-color: #B3C8CF;
+    color: #F2EEDC;
+    font-size: 20px;
+
+}
+
+.footer{
+    left: 0;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "mindus",
+  "version": "1.0.0",
+  "description": "\"Mindus\" streamlines note-taking for readers, offering a personalized library with detailed notes and ratings. It's a tool for efficient knowledge organization and intellectual growth.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Srihari",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.3",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "pg": "^8.11.4"
+  }
+}

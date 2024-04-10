@@ -1,0 +1,85 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="col-auto">
+        <div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg hero">
+                <form action="/sort" method="post">
+                    <label for="sort" class="col-form-label">Sort by :</label>
+                    <select class="form-select form-control mb-4" name="sort" aria-label="Default select example">
+                        <option value="1" selected>title</option>
+                        <option value="2">Date</option>
+                        <option value="3">Rating</option>
+                        <option value="4">Author</option>
+                    </select>
+                    <div class="col-auto pb-3">
+                        <button type="submit" class="form-control btn colorbtn fw-bold btn-outline-secondary rounded-5" > Sort </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <% if (locals.books) { %>
+            <% for(let book of books){%>
+
+                <div class="container my-5 ">
+                    <div class="d-flex row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg pb-5 hero">
+
+                        <div class="container">
+                            <div class="row">
+                              <div class="col">
+                                <!-- <a type="button"class="btn btn-primary btn-md px-4 me-md-2 fw-bold mb-2" href="/delete">Delete</a> -->
+                                <img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" alt="Book-cover">
+                                
+                                <!-- <button type="checkbox" href="/edit" class="btn btn-danger btn-md mt-3 px-4 me-md-2 fw-bold mb-2" onchange="this.form.submit()" name="editBook" value="<%= book.id %>">
+                                    Edit
+                                </button> -->
+                              </div>
+                              <div class="col-12 col-md-10">
+                                <div class="book">
+                                    <h3 id="title<%=book.id%>">
+                                      <%= book.booktitle %>
+                                    </h3> 
+                                    <h6>
+                                      <%= book.author %>
+                                    </h6>
+                                    <span>Rating : </span>
+                                    <% for( let index = 0; index <  book.rating ; index++ ) { %>
+                                        <span>⭐</span>
+                                    <% } %>
+                                    <p>
+                                      <%= book.description %>
+                                    </p>
+                                    <div class="button">
+                                      <form action="/delete" method="post">
+                                        <button type="checkbox" class="btn btn-danger rounded-5 btn-md mt-1 px-4 me-md-2 fw-bold mb-2" onchange="this.form.submit()" name="deleteBook" value="<%= book.id %>">
+                                            Delete
+                                        </button>
+                                    </form>
+                                    <form action="/edit" method="post">
+                                      <button type="submit" class="btn btn-danger btn-md mt-1 rounded-5 px-4 me-md-2 fw-bold mb-2" name="editBook" value="<%= book.id %>">
+                                          Edit
+                                      </button>
+                                  </form>
+                                    </div>
+                                      
+                                    
+                                </div>
+                              </div>
+                            </div>
+                       </div> 
+                
+                        
+                    
+                    </div>
+                </div>
+            <% } %>
+                  
+        <% } %>
+
+        
+
+        
+        
+        
+    </div>
+    <%- include('partials/footer.ejs') %>
