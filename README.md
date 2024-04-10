@@ -30,14 +30,6 @@ We welcome contributions from the community! If you'd like to contribute to Mind
 
 ## Support
 
-For any questions, issues, or feedback, please contact our support team at [support@mindus.com](mailto:support@mindus.com).
+For any questions, issues, or feedback, please contact our support team at [2005srihari@gmail.com](mailto:2005srihari@gmail.com).
 
-## License
 
-This project is licensed under the [MIT License](LICENSE).
-"""
-    with open('README.md', 'w') as file:
-        file.write(readme_content)
-
-if __name__ == "__main__":
-    create_readme()
