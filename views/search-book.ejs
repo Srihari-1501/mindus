@@ -1,0 +1,44 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="container my-5 ">
+        <div class="d-flex row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg pb-5 hero">
+            <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" alt="Book-cover">
+                  </div>
+                  <div class="col-12 col-md-10">
+                    <div class="book">
+                        <h3 id="title<%=book.id%>">
+                          <%= book.booktitle %>
+                        </h3> 
+                        <h6>
+                          <%= book.author %>
+                        </h6>
+                        <span>Rating : </span>
+                        <% for( let index = 0; index <  book.rating ; index++ ) { %>
+                            <span>⭐</span>
+                        <% } %>
+                        <p>
+                          <%= book.description %>
+                        </p>
+                          
+                        <form action="/delete" method="post">
+                            <button type="checkbox" class="btn btn-danger rounded-5 btn-md mt-1 px-4 me-md-2 fw-bold mb-2" onchange="this.form.submit()" name="deleteBook" value="<%= book.id %>">
+                                Delete
+                            </button>
+                        </form>
+                        <form action="/edit" method="post">
+                          <button type="submit" class="btn btn-danger rounded-5 btn-md mt-1 px-4 me-md-2 fw-bold mb-2" name="editBook" value="<%= book.id %>">
+                              Edit
+                          </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <%- include('partials/footer.ejs') %>
+     
+    

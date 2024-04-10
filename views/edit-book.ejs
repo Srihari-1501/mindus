@@ -1,0 +1,85 @@
+<%- include('partials/header.ejs') %>
+    <div class="container my-5">
+        <div class="row p-4 py-4 pe-lg-0  align-items-center rounded-3 border shadow-lg text-center hero">
+            <p class="display-5 fw-bold text-body-emphasis">Edit Book</p>
+        </div>
+        
+    </div>
+      
+    <form id="edited" action="/edited" class="container my-5" method="POST">
+        <div class="row p-4 pb-0 pe-lg-0 py-lg-4 align-items-center rounded-3 border shadow-lg hero">
+            <div class="mb-3">
+                <label for="ebookTitle" class="form-label">Book Title</label>
+                <input type="text" name="ebookTitle" class="form-control" id="exampleFormControlInput1"  value="<%= books.booktitle %>">
+            </div>
+            <div class="mb-3">
+                <label for="ebookDesc" class="form-label">Book Description</label>
+                <textarea class="form-control" name="ebookDesc" id="exampleFormControlTextarea1" rows="3"  ><%= books.description %></textarea>
+            </div>
+
+            <div class="row align-items-center pb-3">
+                <div class="col-auto">
+                    <label for="eauthorName" class="col-form-label">Author</label>
+                    <input type="text" name="eauthorName" class="form-control" value="<%= books.author %> ">
+                </div>
+                <div class="col-auto">
+                    <label for="eisbn" class="col-form-label">ISBN</label>
+                    <input type="text" name="eisbn" class="form-control" value="<%= books.isbn %>">
+                </div>
+                <div class="col-auto">
+                    <label for="eId" class="col-form-label">ID</label>
+                    <input type="text" name="eId" class="form-control" value="<%= id %>" readonly>
+                </div>
+                <div class="col-auto">
+                    <label for="erating" class="col-form-label">Rating</label>
+                    <select class="form-select" name="erating" aria-label="Default select example">
+                        <% if (books.rating == 1) { %>
+                            <option value="1" selected>⭐</option>
+                            <option value="2">⭐⭐</option>
+                            <option value="3" >⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐</option>
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                        <% } %>
+                        
+                        <% if (books.rating == 2) { %>
+                            <option value="1">⭐</option>
+                            <option value="2" selected>⭐⭐</option>
+                            <option value="3" >⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐</option>
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                        <% } %>
+                        
+                        <% if (books.rating == 3) { %>
+                            <option value="1">⭐</option>
+                            <option value="2">⭐⭐</option>
+                            <option value="3" selected >⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐</option>
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                        <% } %>
+                        
+                        <% if (books.rating == 4) { %>
+                            <option value="1">⭐</option>
+                            <option value="2">⭐⭐</option>
+                            <option value="3" >⭐⭐⭐</option>
+                            <option value="4" selected>⭐⭐⭐⭐</option>
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                        <% } %>
+                        
+                        <% if (books.rating == 5) { %>
+                            <option value="1">⭐</option>
+                            <option value="2">⭐⭐</option>
+                            <option value="3" >⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐</option>
+                            <option value="5" selected>⭐⭐⭐⭐⭐</option>
+                        <% } %>
+                    </select>
+                </div>
+            </div> 
+            <div class="col-auto pb-3">
+                <button type="submit" class="form-control btn colorbtn btn-outline-secondary rounded-5" > Submit </button>
+            </div>
+        </div>
+        
+        
+    </form>
+    <%- include('partials/footer.ejs') %>

@@ -1,0 +1,48 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="container my-5">
+        <div class="row p-4 py-4 pe-lg-0  align-items-center rounded-3 border shadow-lg text-center hero">
+            <p class="display-5 fw-bold text-body-emphasis">Enter New Entry</p>
+        </div>
+        
+    </div>
+      
+    <form id="addBook" action="/addBook" class="container my-5" method="POST">
+        <div class="row p-4 pb-0 pe-lg-0 py-lg-4 align-items-center rounded-3 border shadow-lg hero">
+            <div class="mb-3">
+                <label for="bookTitle" class="form-label">Book Title</label>
+                <input type="text" name="bookTitle" class="form-control" id="exampleFormControlInput1" placeholder="Enter Book Title">
+            </div>
+            <div class="mb-3">
+                <label for="bookDesc" class="form-label">Book Description</label>
+                <textarea class="form-control" name="bookDesc" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <div class="row align-items-center pb-3">
+                <div class="col-auto">
+                    <label for="authorName" class="col-form-label">Author</label>
+                    <input type="text" name="authorName" class="form-control">
+                </div>
+                <div class="col-auto">
+                    <label for="isbn" class="col-form-label">ISBN</label>
+                    <input type="text" name="isbn" class="form-control">
+                </div>
+                <div class="col-auto">
+                    <label for="rating" class="col-form-label">Rating</label>
+                    <select class="form-select" name="bookRat" aria-label="Default select example">
+                        <option value="1" selected>⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                    </select>
+                </div>
+            </div> 
+            <div class="col-auto pb-3">
+                <button type="submit" class="form-control btn rounded-5 colorbtn btn-outline-secondary" > Submit </button>
+            </div>
+        </div>
+        
+        
+    </form>
+    <%- include('partials/footer.ejs') %>
